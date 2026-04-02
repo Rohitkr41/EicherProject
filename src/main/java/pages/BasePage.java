@@ -90,4 +90,28 @@ public class BasePage {
         ((JavascriptExecutor) driver)
                 .executeScript("arguments[0].scrollIntoView({block:'center'});", el);
     }
+    
+ // BasePage.java
+
+    public void navigateUsingMenu(By menuLocator, By subMenuLocator, String urlKeyword) {
+
+        waitForPageReady();
+
+        // STEP 1: Expand menu (JS for reliability)
+        WebElement menu = wait.until(ExpectedConditions.presenceOfElementLocated(menuLocator));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", menu);
+
+        // STEP 2: Get submenu anchor
+        WebElement subMenu = wait.until(ExpectedConditions.presenceOfElementLocated(subMenuLocator));
+
+        String href = subMenu.getAttribute("href");
+        System.out.println("Navigation URL: " + href);
+
+        // STEP 3: Direct navigation (MOST STABLE)
+        driver.get(href);
+
+        // STEP 4: Wait for page
+        wait.until(ExpectedConditions.urlContains(urlKeyword));
+        waitForPageReady();
+    }
 }

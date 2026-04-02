@@ -58,7 +58,7 @@ public class BaseTest {
 
         if (driver != null) {
 
-            driver.quit();   // browser + session close
+//            driver.quit();   // browser + session close
 
             driver = null;   // memory clean
         }

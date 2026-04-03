@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-02T16:06:17 IST" name="Default suite" finished-at="2026-04-02T16:06:51 IST" duration-ms="34542">
+  <suite started-at="2026-04-03T12:48:43 IST" name="Default suite" finished-at="2026-04-03T12:49:07 IST" duration-ms="24054">
     <groups>
     </groups>
-    <test started-at="2026-04-02T16:06:17 IST" name="Default test" finished-at="2026-04-02T16:06:51 IST" duration-ms="34542">
-      <class name="tests.camp.CampRegistrationTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.camp.CampRegistrationTest@1165b38]" started-at="2026-04-02T16:06:17 IST" name="setUp" finished-at="2026-04-02T16:06:19 IST" duration-ms="2005" status="PASS">
+    <test started-at="2026-04-03T12:48:43 IST" name="Default test" finished-at="2026-04-03T12:49:07 IST" duration-ms="24054">
+      <class name="tests.bp_Sugar.BpSugarTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.bp_Sugar.BpSugarTest@1165b38]" started-at="2026-04-03T12:48:43 IST" name="setUp" finished-at="2026-04-03T12:48:45 IST" duration-ms="1922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyNewRegistrationFlow()[pri:0, instance:tests.camp.CampRegistrationTest@1165b38]" started-at="2026-04-02T16:06:19 IST" name="verifyNewRegistrationFlow" finished-at="2026-04-02T16:06:51 IST" duration-ms="32487" status="PASS">
+        <test-method signature="verifyBpSugarSearchAndClickIcon()[pri:0, instance:tests.bp_Sugar.BpSugarTest@1165b38]" started-at="2026-04-03T12:48:45 IST" name="verifyBpSugarSearchAndClickIcon" finished-at="2026-04-03T12:49:07 IST" duration-ms="22084" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNewRegistrationFlow -->
-        <test-method is-config="true" signature="captureFailure(org.testng.ITestResult)[pri:0, instance:tests.camp.CampRegistrationTest@1165b38]" started-at="2026-04-02T16:06:51 IST" name="captureFailure" finished-at="2026-04-02T16:06:51 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- verifyBpSugarSearchAndClickIcon -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.bp_Sugar.BpSugarTest@1165b38]" started-at="2026-04-03T12:49:07 IST" name="tearDown" finished-at="2026-04-03T12:49:07 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="captureFailure(org.testng.ITestResult)[pri:0, instance:tests.bp_Sugar.BpSugarTest@1165b38]" started-at="2026-04-03T12:49:07 IST" name="captureFailure" finished-at="2026-04-03T12:49:07 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyNewRegistrationFlow status=SUCCESS method=CampRegistrationTest.verifyNewRegistrationFlow()[pri:0, instance:tests.camp.CampRegistrationTest@1165b38] output={null}]]]>
+                <![CDATA[[TestResult name=verifyBpSugarSearchAndClickIcon status=SUCCESS method=BpSugarTest.verifyBpSugarSearchAndClickIcon()[pri:0, instance:tests.bp_Sugar.BpSugarTest@1165b38] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.camp.CampRegistrationTest@1165b38]" started-at="2026-04-02T16:06:51 IST" name="tearDown" finished-at="2026-04-02T16:06:51 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.camp.CampRegistrationTest -->
+      </class> <!-- tests.bp_Sugar.BpSugarTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

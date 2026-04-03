@@ -235,6 +235,7 @@ public class CampRegistrationPage extends BasePage {
         }
         System.out.println("✅ PrevEar selected: " + (isYes ? "Yes" : "No"));
     }
+    
 
     public void selectEarExamCenter(String center) {
         By locator = center.equalsIgnoreCase("EMV") ? earCenterEMV : earCenterOthers;
@@ -302,6 +303,7 @@ public class CampRegistrationPage extends BasePage {
 
         throw new RuntimeException("❌ District NOT found: " + districtName);
     }
+    
     
     public void selectDropdownByText(By locator, String value) {
 

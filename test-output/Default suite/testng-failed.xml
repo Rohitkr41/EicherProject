@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.camp.CampRegistrationTest">
+      <class name="tests.bp_Sugar.BpSugarTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="verifyNewRegistrationFlow"/>
+          <include name="verifyBpSugarSearchAndClickIcon"/>
           <include name="captureFailure"/>
         </methods>
-      </class> <!-- tests.camp.CampRegistrationTest -->
+      </class> <!-- tests.bp_Sugar.BpSugarTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

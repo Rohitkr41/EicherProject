@@ -23,6 +23,16 @@ public class BasePage {
         waitForLoaderToDisappear();
         waitUntilModalGone();
     }
+    
+ // ✅ Wrapper for single element
+    public WebElement findElement(By locator) {
+        return driver.findElement(locator);
+    }
+
+    // ✅ Wrapper for multiple elements
+    public List<WebElement> findElements(By locator) {
+        return driver.findElements(locator);
+    }
 
     protected void waitForLoaderToDisappear() {
         try {
@@ -43,6 +53,13 @@ public class BasePage {
                 }
             }
         } catch (Exception ignored) {}
+    }
+    
+    // ✅ Wrapper for typing text
+    public void type(By locator, String text) {
+        WebElement element = driver.findElement(locator);
+        element.clear();
+        element.sendKeys(text);
     }
 
     protected WebElement waitForVisibility(By locator) {

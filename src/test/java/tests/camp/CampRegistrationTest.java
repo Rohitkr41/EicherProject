@@ -24,6 +24,7 @@ public class CampRegistrationTest extends BaseTest {
                 ConfigReader.getProperty("password")
         );
 
+        
         // ✅ Sidebar navigation
         SidebarPage sidebar = new SidebarPage(driver);
         sidebar.clickMenu("Camp Registration");
@@ -63,7 +64,7 @@ public class CampRegistrationTest extends BaseTest {
 
         // ✅ Submit form
         
-//        camp.submitForm();
+        camp.submitForm();
 
         // ✅ Assertion: URL + optional success message
         Assert.assertTrue(
@@ -71,10 +72,6 @@ public class CampRegistrationTest extends BaseTest {
                 "❌ Navigation failed"
         );
 
-        // Agar success message ka locator available hai toh verify karo
-        // Example:
-        // WebElement successMsg = driver.findElement(By.xpath("//div[contains(text(),'Registration Successful')]"));
-        // Assert.assertTrue(successMsg.isDisplayed(), "❌ Registration not successful");
     }
 
     @AfterMethod

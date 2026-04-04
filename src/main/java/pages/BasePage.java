@@ -86,6 +86,28 @@ public class BasePage {
         WebElement el = waitForClickable(locator);
         new Select(el).selectByVisibleText(text);
     }
+    
+    public void selectDropdownByText(By locator, String value) {
+
+        WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        Select select = new Select(dropdown);
+
+        boolean found = false;
+
+        for (WebElement option : select.getOptions()) {
+            if (option.getText().trim().equalsIgnoreCase(value)) {
+                select.selectByVisibleText(option.getText().trim());
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            throw new RuntimeException("❌ Option NOT found: " + value);
+        }
+
+        System.out.println("✅ Selected: " + value);
+    }
 
     protected String getText(By locator) {
         return waitForVisibility(locator).getText().trim();
@@ -131,4 +153,27 @@ public class BasePage {
         wait.until(ExpectedConditions.urlContains(urlKeyword));
         waitForPageReady();
     }
+    
+    private By successPopup = By.id("popup_message");
+    private By okButton     = By.id("popup_ok");
+    
+    public void handleSuccessPopup() {
+
+   	    // Wait for popup visible
+   	    WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(successPopup));
+
+   	    // Print message
+   	    System.out.println("✅ Popup Message: " + popup.getText());
+
+   	    // Click OK button
+   	    WebElement okBtn = wait.until(ExpectedConditions.elementToBeClickable(okButton));
+   	    okBtn.click();
+
+   	    // Wait for popup to disappear
+   	    wait.until(ExpectedConditions.invisibilityOfElementLocated(successPopup));
+
+   	    System.out.println("✅ Popup handled successfully");
+   	}
+    
+    
 }

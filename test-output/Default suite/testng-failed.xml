@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.bp_Sugar.BpSugarTest">
+      <class name="tests.clinicalExamination.OcularHistoryTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="verifyBpSugarSearchAndClickIcon"/>
           <include name="captureFailure"/>
+          <include name="validateOcularAndSystemicFlow"/>
         </methods>
-      </class> <!-- tests.bp_Sugar.BpSugarTest -->
+      </class> <!-- tests.clinicalExamination.OcularHistoryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.clinicalExamination.OcularHistoryTest">
+      <class name="tests.clinicalExamination.VisualAcuityTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="captureFailure"/>
-          <include name="validateOcularAndSystemicFlow"/>
+          <include name="validateFullVisualAcuityAndRefractionFlow"/>
         </methods>
-      </class> <!-- tests.clinicalExamination.OcularHistoryTest -->
+      </class> <!-- tests.clinicalExamination.VisualAcuityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

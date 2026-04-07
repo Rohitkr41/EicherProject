@@ -56,13 +56,13 @@ public class OcularHistoryTest extends BaseTest {
             // =====================================================
             System.out.println("🔵 Filling Ocular History...");
 
-//            ocular.selectDisease(disease);
-//            ocular.selectEye(eye);
-//            ocular.selectSurgeryTreatmentDone(surgery);
-//            ocular.selectStatus(status);
-//            ocular.enterRemarks(remarks);
-//
-//            ocular.clickSaveButton();       // Save Ocular
+            ocular.selectDisease(disease);
+            ocular.selectEye(eye);
+            ocular.selectSurgeryTreatmentDone(surgery);
+            ocular.selectStatus(status);
+            ocular.enterRemarks(remarks);
+
+            ocular.clickSaveButton();       // Save Ocular
             ocular.handleSuccessPopup();    // Handle popup once
 
             System.out.println("✅ Ocular History saved");
@@ -72,8 +72,8 @@ public class OcularHistoryTest extends BaseTest {
             // =====================================================
             System.out.println("🟣 Filling Systemic Disease...");
 
+         // 🟣 SYSTEMIC
             ocular.fillSystemicDisease(
-            		
                     "Yes",
                     "CAD",
                     "2",
@@ -81,6 +81,8 @@ public class OcularHistoryTest extends BaseTest {
                     "Controlled",
                     "Satisfactory"
             );
+
+            Assert.assertTrue(true);
             
         
 

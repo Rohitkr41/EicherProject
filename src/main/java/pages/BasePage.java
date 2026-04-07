@@ -176,4 +176,24 @@ public class BasePage {
    	}
     
     
+    protected void clearAndType(WebElement element, String value) {
+        try {
+            element.click();
+            element.clear();
+
+            // Extra safety
+            element.sendKeys(Keys.CONTROL + "a");
+            element.sendKeys(Keys.DELETE);
+
+            element.sendKeys(value);
+
+        } catch (Exception e) {
+            // JS fallback
+            ((JavascriptExecutor) driver).executeScript(
+                    "arguments[0].value='';", element);
+            element.sendKeys(value);
+        }
+    }
+    
+    
 }

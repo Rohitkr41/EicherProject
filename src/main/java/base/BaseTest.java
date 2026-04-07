@@ -6,6 +6,7 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.ConfigReader;
@@ -17,6 +18,7 @@ import java.util.Map;
 public class BaseTest {
 
     protected WebDriver driver;
+    protected WebDriverWait wait;   // ✅ ADD THIS
 
     @BeforeMethod
     public void setUp() {
@@ -39,28 +41,25 @@ public class BaseTest {
 
         driver.manage().window().maximize();
 
-        // implicit wait zero rakho (best practice)
+        // implicit wait zero
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
         // page load wait
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
+        // ✅ EXPLICIT WAIT INIT (MAIN FIX)
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
         // open application
         driver.get(ConfigReader.getProperty("url"));
     }
-
-    // ============================
-    // CLOSE BROWSER AFTER TEST
-    // ============================
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
 
         if (driver != null) {
-
-//            driver.quit();   // browser + session close
-
-            driver = null;   // memory clean
+//            driver.quit();
+            driver = null;
         }
     }
 }

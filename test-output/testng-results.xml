@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-07T11:23:27 IST" name="Default suite" finished-at="2026-04-07T11:23:48 IST" duration-ms="20819">
+  <suite started-at="2026-04-08T12:00:38 IST" name="Default suite" finished-at="2026-04-08T12:01:01 IST" duration-ms="23141">
     <groups>
     </groups>
-    <test started-at="2026-04-07T11:23:27 IST" name="Default test" finished-at="2026-04-07T11:23:48 IST" duration-ms="20819">
-      <class name="tests.clinicalExamination.OcularHistoryTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.clinicalExamination.OcularHistoryTest@1165b38]" started-at="2026-04-07T11:23:27 IST" name="setUp" finished-at="2026-04-07T11:23:29 IST" duration-ms="1989" status="PASS">
+    <test started-at="2026-04-08T12:00:38 IST" name="Default test" finished-at="2026-04-08T12:01:01 IST" duration-ms="23141">
+      <class name="tests.clinicalExamination.OcularExaminationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.clinicalExamination.OcularExaminationTest@1165b38]" started-at="2026-04-08T12:00:38 IST" name="setUp" finished-at="2026-04-08T12:00:40 IST" duration-ms="1987" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateOcularAndSystemicFlow()[pri:0, instance:tests.clinicalExamination.OcularHistoryTest@1165b38]" started-at="2026-04-07T11:23:29 IST" name="validateOcularAndSystemicFlow" finished-at="2026-04-07T11:23:48 IST" duration-ms="18792" status="PASS">
+        <test-method signature="validateOcularExaminationFlow()[pri:0, instance:tests.clinicalExamination.OcularExaminationTest@1165b38]" started-at="2026-04-08T12:00:40 IST" name="validateOcularExaminationFlow" finished-at="2026-04-08T12:01:01 IST" duration-ms="21107" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateOcularAndSystemicFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.clinicalExamination.OcularHistoryTest@1165b38]" started-at="2026-04-07T11:23:48 IST" name="tearDown" finished-at="2026-04-07T11:23:48 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="captureFailure(org.testng.ITestResult)[pri:0, instance:tests.clinicalExamination.OcularHistoryTest@1165b38]" started-at="2026-04-07T11:23:48 IST" name="captureFailure" finished-at="2026-04-07T11:23:48 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- validateOcularExaminationFlow -->
+        <test-method is-config="true" signature="captureFailure(org.testng.ITestResult)[pri:0, instance:tests.clinicalExamination.OcularExaminationTest@1165b38]" started-at="2026-04-08T12:01:01 IST" name="captureFailure" finished-at="2026-04-08T12:01:01 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateOcularAndSystemicFlow status=SUCCESS method=OcularHistoryTest.validateOcularAndSystemicFlow()[pri:0, instance:tests.clinicalExamination.OcularHistoryTest@1165b38] output={null}]]]>
+                <![CDATA[[TestResult name=validateOcularExaminationFlow status=SUCCESS method=OcularExaminationTest.validateOcularExaminationFlow()[pri:0, instance:tests.clinicalExamination.OcularExaminationTest@1165b38] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureFailure -->
-      </class> <!-- tests.clinicalExamination.OcularHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.clinicalExamination.OcularExaminationTest@1165b38]" started-at="2026-04-08T12:01:01 IST" name="tearDown" finished-at="2026-04-08T12:01:01 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.clinicalExamination.OcularExaminationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

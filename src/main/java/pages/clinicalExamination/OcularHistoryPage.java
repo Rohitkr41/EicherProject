@@ -196,8 +196,9 @@ public class OcularHistoryPage extends BasePage {
         clickSystemicSaveButton();
         handleSuccessPopup();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/Rohitkr41/EicherProject
+//<<<<<<< HEAD
+//}
+//=======
+//}
+//>>>>>>> branch 'master' of https://github.com/Rohitkr41/EicherProject

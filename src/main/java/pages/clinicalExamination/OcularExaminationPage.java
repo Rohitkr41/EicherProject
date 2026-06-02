@@ -202,12 +202,35 @@ public class OcularExaminationPage extends BasePage {
         type(le_remarks, remarks);
     }
 
-    // ===== SAVE =====
-    public void clickSave() {
-        WebElement btn = wait.until(ExpectedConditions.elementToBeClickable(saveBtn));
-        scrollAndClick(btn);
+   
+	// ===== SAVE =====
+	public void clickSave() {
+
+    try {
+
+        WebElement btn = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(saveBtn));
+
+        // 🔥 Highlight button
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].style.border='5px solid red'", btn);
+
+        Thread.sleep(2000);
+
+        System.out.println("Before Click");
+
+        btn.click();
+
+        System.out.println("After Click");
+
+    } catch (Exception e) {
+
+        e.printStackTrace();
     }
+}
     
+	
+	
     private void selectSelect2Dropdown(By locator, String value) {
 
         WebElement container = wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -275,6 +298,7 @@ public class OcularExaminationPage extends BasePage {
     public void waitForEyeSectionToLoad() {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(re_lid));
+        
         wait.until(ExpectedConditions.elementToBeClickable(re_lid));
 
         System.out.println("✅ Eye section ready");
@@ -317,7 +341,7 @@ public class OcularExaminationPage extends BasePage {
 	                le_acVal, le_pupilVal, le_lensVal, le_fundusVal, le_remarkVal);
 	    }
 	
-	//    clickSave();
+	    clickSave();
 	}
 	   
 	// ===== VERIFICATION METHODS =====

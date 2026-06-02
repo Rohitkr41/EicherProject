@@ -29,12 +29,13 @@ public class OcularExaminationTest extends BaseTest {
             // ===== NAVIGATION =====
             SidebarPage sidebar = new SidebarPage(driver);
             sidebar.clickMenu("Clinical Examination");
+            
             System.out.println("✅ Navigated to Clinical Examination");
 
             // ===== OPEN PATIENT =====
             ClinicalPage clinical = new ClinicalPage(driver);
-            clinical.searchByDate("02/04/2026", "03/04/2026");
-            clinical.clickNewStatusIcon();
+            clinical.searchByDate("02/05/2026", "30/06/2026");
+            clinical.clickValidRecord();
             System.out.println("✅ Patient opened");
 
             // ===== OCULAR EXAM PAGE =====
@@ -88,6 +89,7 @@ public class OcularExaminationTest extends BaseTest {
         } catch (Exception e) {
 
             System.out.println("❌ TEST FAILED: " + e.getMessage());
+            
             e.printStackTrace();
 
             ScreenshotUtil.captureScreenshot(driver, "OcularExamTest_Failure");

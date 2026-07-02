@@ -33,7 +33,7 @@ public class ClinicalTest extends BaseTest {
         clinical.openClinicalMenu();
 
         // ✅ Perform search with date filter
-        clinical.searchByDate("02/04/2026", "03/04/2026");
+        clinical.searchByDate("01/07/2026","30/09/2026");
 
         // ✅ Click icon for "New" status row
         clinical.clickNewStatusIcon();

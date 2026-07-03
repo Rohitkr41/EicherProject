@@ -59,7 +59,7 @@ public class VisualAcuityTest extends BaseTest {
 
             // ===== OPEN PATIENT =====
             ClinicalPage clinical = new ClinicalPage(driver);
-            clinical.searchByDate("02/05/2026", "30/05/2026");
+            clinical.searchByDate("02/07/2026", "30/09/2026");
             clinical.clickValidRecord();
             System.out.println("✅ Patient opened");
 

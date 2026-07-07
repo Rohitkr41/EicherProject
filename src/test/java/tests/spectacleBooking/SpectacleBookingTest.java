@@ -34,7 +34,7 @@ public class SpectacleBookingTest extends BaseTest {
 
         // ===== PAGE OBJECT =====
         SpectacleBookingPage spectacle = new SpectacleBookingPage(driver);
-        spectacle.searchByDate("01/07/2026","30/09/2026");
+        spectacle.searchByDate("01/07/2026","30/08/2026");
         boolean isBookingOpened =
                 spectacle.clickSpectacleBookingIcon();
 

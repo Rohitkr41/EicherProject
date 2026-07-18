@@ -35,7 +35,7 @@ public class CampRegistrationTest extends BaseTest {
         camp.goToNewRegistration();
 
         // ✅ Camp select + popup handle
-        camp.selectCamp("JLR-EM3-26-C19 (FROM V3M TEAM - 02/04/2026)");
+        camp.selectCamp("JLR-EM3-26-C19 (FROM V3M TEAM - 02/08/2026)");
 
         // ✅ Fill patient details in sequence
         camp.enterFirstName("Rahul");

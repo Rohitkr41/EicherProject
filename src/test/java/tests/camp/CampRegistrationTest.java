@@ -1,83 +1,78 @@
 package tests.camp;
 
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
+import java.util.List;
+
 import org.testng.annotations.Test;
-import org.testng.Assert;
 
 import base.BaseTest;
 import pages.LoginPage;
-import pages.SidebarPage;
 import pages.camp.CampRegistrationPage;
-import utils.ConfigReader;
-import utils.ScreenshotUtil;
+import utils.CampRegistrationData;
+import utils.ExcelUtils;
+import utils.TestDataGenerator;
 
 public class CampRegistrationTest extends BaseTest {
 
-    @Test
-    public void verifyNewRegistrationFlow() {
+	@Test
+	public void verifyCampRegistration() {
 
-        // ✅ Login
-        LoginPage login = new LoginPage(driver);
-        login.login(
-                ConfigReader.getProperty("username"),
-                ConfigReader.getProperty("password")
-        );
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.login("ravi", "sceh@123");
 
-        
-        // ✅ Sidebar navigation
-        SidebarPage sidebar = new SidebarPage(driver);
-        sidebar.clickMenu("Camp Registration");
+		CampRegistrationPage campPage = new CampRegistrationPage(driver);
+		campPage.goToNewRegistration();
 
-        // ✅ Camp Registration Page
-        CampRegistrationPage camp = new CampRegistrationPage(driver);
+		List<CampRegistrationData> patients = ExcelUtils
+				.getCampRegistrationData("src/test/resources/testdata/CampPatientRegistrationReport.xlsx");
 
-        camp.goToNewRegistration();
+		System.out.println("Total patients from Excel: " + patients.size());
 
-        // ✅ Camp select + popup handle
-        camp.selectCamp("JLR-EM3-26-C19 (FROM V3M TEAM - 02/08/2026)");
+		int registrationLimit = 1; // yahan 1, 5, 10, 20 jo chahiye set karo
+		int count = 0;
 
-        // ✅ Fill patient details in sequence
-        camp.enterFirstName("Rahul");
-        camp.enterLastName("Sharma");
-        camp.selectGender("Male");
-        camp.enterAgeYear("28");
-        camp.enterAgeMonth("6");
-        camp.enterNextOfKin("Amit Sharma");
-        camp.enterContactNumber("9876543210");
-        camp.enterDoorNo("palam");
-        camp.selectDistrict("Gurugram");
-        camp.selectQualification("GRADUATE");
-        camp.selectOccupation("DRIVER");
-        camp.enterdrivingLicense("DL384753545");
-        camp.enterDrivingExp("4");
-        camp.enterRemarks("Eye Checkup");
-        
-        camp.selectPrevEye(true);              // Yes
-        camp.selectEyeExamCenter("EMV");       // EMV center
-        camp.enterEyeExamDate("02/04/2024");   // Date
+		for (CampRegistrationData patient : patients) {
 
-        camp.selectPrevEar(true);              // Yes
-        camp.selectEarExamCenter("EMV");    // Others center
-        camp.enterEarExamDate("02/04/2024");   // Date
+			if (count >= registrationLimit) {
+				break;
+			}
 
+			count++;
 
-        // ✅ Submit form
-        
-        camp.submitForm();
+			patient.setNextOfKin(TestDataGenerator.getNextOfKin());
+			patient.setDrivingExp(TestDataGenerator.getDrivingExperience());
 
-        // ✅ Assertion: URL + optional success message
-        Assert.assertTrue(
-                driver.getCurrentUrl().contains("PatientRegistration_Camp"),
-                "❌ Navigation failed"
-        );
+			try {
+				System.out.println("========== PATIENT DATA ==========");
+				System.out.println("Registration No : " + count);
+				System.out.println("Gender : " + patient.getGender());
+				System.out.println("Age Year : " + patient.getAgeYear());
+				System.out.println("Age Month : " + patient.getAgeMonth());
+				System.out.println("Next Of Kin : " + patient.getNextOfKin());
+				System.out.println("District From Excel = [" + patient.getDistrict() + "]");
+				System.out.println("Qualification : " + patient.getQualification());
+				System.out.println("Occupation : " + patient.getOccupation());
+				System.out.println("Identity Type : " + patient.getIdentityType());
+				System.out.println("Previous Eye : " + patient.getPreviousEyeCheckup());
+				System.out.println("Eye Center : " + patient.getEyeExaminedCenter());
+				System.out.println("Previous Ear : " + patient.getPreviousEarCheckup());
+				System.out.println("Ear Center : " + patient.getEarExaminedCenter());
+				System.out.println("==================================");
 
-    }
+				campPage.fillCampRegistrationForm(patient);
+				campPage.submitForm();
 
-    @AfterMethod
-    public void captureFailure(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ScreenshotUtil.captureScreenshot(driver, result.getName());
-        }
-    }
+				System.out.println("Registration Successful: " + count);
+
+			} catch (Exception e) {
+				System.out.println("Registration Failed: " + count);
+				e.printStackTrace();
+			}
+
+			campPage.waitForPageReady();
+
+			if (count < registrationLimit) {
+				campPage.goToNewRegistration();
+			}
+		}
+	}
 }

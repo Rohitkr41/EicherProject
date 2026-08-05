@@ -27,7 +27,7 @@ public class CampRegistrationTest extends BaseTest {
 
 		System.out.println("Total patients from Excel: " + patients.size());
 
-		int registrationLimit = 1; // yahan 1, 5, 10, 20 jo chahiye set karo
+		int registrationLimit = 10; // yahan 1, 5, 10, 20 jo chahiye set karo
 		int count = 0;
 
 		for (CampRegistrationData patient : patients) {

@@ -183,7 +183,7 @@ public class SpectacleBookingPage extends BasePage {
                 throw new RuntimeException("❌ Booking No NOT selected");
             }
 
-            System.out.println("✅ Booking Status Selected : NO");
+            System.out.println("✅ Booking Status Selected : NO ");
 
         } else {
 

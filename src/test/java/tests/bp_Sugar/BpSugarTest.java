@@ -33,7 +33,7 @@ public class BpSugarTest extends BaseTest {
         bpSugar.openBpSugarPage();
 
 //        // ✅ Perform search
-        bpSugar.searchByDate("01/07/2026","30/09/2026");
+        bpSugar.searchByDate("01/09/2026","30/10/2026");
       // ✅ Click icon for "New" status row
         bpSugar.clickNewStatusIcon();       
         bpSugar.clickNewAfterIconExa();

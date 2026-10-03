@@ -41,9 +41,9 @@ public class BpSugarTest extends BaseTest {
         bpSugar.selectBpChecked("Yes");
 
         bpSugar.fillBpSugarExamination(
-        	    "80",              // Diastolic
+        	    "90",              // Diastolic
         	    "120",             // Systolic
-        	    "72",              // Pulse
+        	    "62",              // Pulse
         	    "Abnormal",          // BP Status
         	    "6",        // Duration
         	    "Weeks",          // Period
